@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var mesafe = Number(prompt("Məsafəni daxil edin: (Km ilə)"));
+        var zaman = Number(prompt("Zamanı daxil edin: (Saat ilə)"));
+        var suret = mesafe / zaman;
+        var cavab;
+        var x;
+
+        var text1 = " km yolu ";
+        var text2 = " saat müddətində getmek üçün sizin ortalama sürətiniz ";
+        var text3 = " km/saat olmalıdır.";
+        var text4 = " Sizə lazım olan yanacaq miqdarı ";
+        var text5 = " litr, ortalama yanacaq sərfiyyatı isə ";
+        var text6 = "l/100 km olacaq.";
+
+        function Hesabla() {
+            if (suret < 0) {
+                cavab = 0;
+            } else if (suret >= 0 && suret <= 60) {
+                cavab = 6;
+            } else if (suret > 60 && suret <= 90) {
+                cavab = 9;
+            } else if (suret > 90 && suret <= 120) {
+                cavab = 8;
+            } else {
+                cavab = 10;
+            }
+
+            if(mesafe > 100){
+                    x = (mesafe * 9) / 100;
+            if (cavab == 0) {
+                return mesafe + text1 + zaman + text2 + suret.toFixed(0) + text3 + text4 + x.toFixed(0) + text5 + cavab + text6;
+            } else if (cavab == 6) {
+                return mesafe + text1 + zaman + text2 + suret.toFixed(0) + text3 + text4 + x.toFixed(0) + text5 + cavab + text6;
+            } else if (cavab == 9) {
+                return mesafe + text1 + zaman + text2 + suret.toFixed(0) + text3 + text4 + x.toFixed(0) + text5 + cavab + text6;  
+            } else if (cavab == 8) {
+                return mesafe + text1 + zaman + text2 + suret.toFixed(0) + text3 + text4 + x.toFixed(0)  + text5 + cavab + text6;
+            } else if (cavab == 10) {
+                return mesafe + text1 + zaman + text2 + suret.toFixed(0) + text3 + text4 + x.toFixed(0)  + text5 + cavab + text6;
+            } else {
+                return "Nəsə səhv getdi :(";
+            }
+        }
+        }
+
+        document.write(Hesabla());
+
+    </script>
+
+</body>
+
+</html>
